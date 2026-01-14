@@ -29,3 +29,12 @@ variable "ec2_config" {
     v_type = "gp2"
   }
 }
+
+variable "additional_tag" {
+  description = "Additional tag to be applied to the EC2 instance"
+  type = map(string)
+  default = {
+    Environment = "Development"
+    Owner       = "Admin"
+  }
+}

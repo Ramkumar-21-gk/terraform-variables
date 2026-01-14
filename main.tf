@@ -21,7 +21,10 @@ resource "aws_instance" "my_server" {
     volume_type = var.ec2_config.v_type
   }
 
-  tags = {
-    Name = "my-server"
-  }
+  tags = merge(
+    {
+      Name = "MyServer"
+    },
+    var.additional_tag
+  )
 } 
